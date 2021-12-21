@@ -1,0 +1,15 @@
+{
+    "name": "ka4alkin/mvc",
+    "authors": [
+        {
+            "name": "Nazar Ka4alkin",
+            "email": "doskoch25@gmail.com"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "": "application/"
+        }
+    }
+}
