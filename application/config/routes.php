@@ -18,7 +18,7 @@ return [
     ],
     'test' => [
         'controller' => 'test',
-        'action' => 'go',
-    ],
+        'action' => 'test',
+    ]
 
 ];

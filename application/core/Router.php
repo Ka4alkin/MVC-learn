@@ -51,7 +51,8 @@ class Router
 
                 echo $pathClass . 'НАЙДЕН';
 
-                $controller = new $pathClass;
+                /*$controller = new $pathClass;*/
+                $controller = new $pathClass($this->params);
                 if (method_exists($pathClass,$action)){
                     $controller->$action();
                 }

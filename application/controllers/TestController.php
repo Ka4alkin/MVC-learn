@@ -2,11 +2,19 @@
 
 namespace controllers;
 
-class TestController
+use core\Controller;
+
+class TestController extends Controller
 {
 
-    function __construct()
+    /*function __construct($route)
     {
-        echo 'TEST';
-    }
+        parent::__construct($route);
+    }*/
+
+    public function testAction(){
+        $this->view->render('Tест');
+
+     }
+
 }
