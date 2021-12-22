@@ -57,12 +57,13 @@ class Router
                     $controller->$action();
                 }
 
-
             } else {
-                echo `route ${$pathClass} NOT found`;
+                /*echo `route ${$pathClass} NOT found`;*/
+                View::errorCode(404);
             }
         } else {
-            echo 'route NOT found';
+            /*echo 'route NOT found';*/
+            View::errorCode(404);
         }
 
 

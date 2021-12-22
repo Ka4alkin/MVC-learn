@@ -12,6 +12,7 @@ abstract class Controller
         $this->route = $route;
         $this->view = new View($route);
         /*$this->before();*/
+
     }
 
 }

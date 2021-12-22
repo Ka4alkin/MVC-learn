@@ -16,6 +16,12 @@ class View
 
     public function render($title, $vars = [])
     {
+//        echo '<pre style="display: none" id="kl_look">';
+//        print_r($vars);
+//        echo '</pre>';
+        extract($vars);
+
+
         $pathView = 'application/views/' . $this->pathToView . '.php';
         $pathLayout = 'application/views/layouts/' . $this->layout . '.php';
 
@@ -34,4 +40,19 @@ class View
             echo 'Вид не найден' . $pathLayout;
         }
     }
+
+    public static function errorCode($code){
+        /*http_response_code($code);*/
+        $path = 'application/views/errors/' . $code . '.php';
+        if (file_exists($path)){
+            require $path;
+        }
+        die();
+    }
+
+    public function redirect($url){
+        header('location: '.$url);
+        die();
+    }
+
 }
