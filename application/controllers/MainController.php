@@ -12,12 +12,14 @@ class MainController extends Controller
 
         $db = new Db();
 
-        $g = $db->row('SELECT name FROM testtable');
+        $paramsDbPdo = [
+            'id' => 2,
+        ];
 
-//        WHERE id = 1
+        $data = $db->column('SELECT name FROM testtable WHERE id = :id', $paramsDbPdo);
 
         echo '<pre style="display: none" id="kl_look">';
-        print_r($g);
+        print_r($data);
         echo '</pre>';
 
         /*$vars = [

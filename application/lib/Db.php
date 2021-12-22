@@ -15,21 +15,29 @@ class Db
         $this->db = new PDO('mysql:host=' . $dbConfig['host'] . ';dbname=' . $dbConfig['name'], $dbConfig['user'], $dbConfig['password']);
     }
 
-    public function query($sql)
+    public function query($sql, $params = [])
     {
-        $query = $this->db->query($sql);
-        return $query;
+        $stmt = $this->db->prepare($sql);
+
+        if (!empty($params)){
+            foreach ($params as $key=>$val){
+                $stmt->bindValue(':'.$key,$val);
+            }
+        }
+
+        $stmt->execute();
+        return $stmt;
     }
 
-    public function row($sql)
+    public function row($sql, $params = [])
     {
-        $result = $this->query($sql);
+        $result = $this->query($sql,$params);
         return $result->fetchAll(PDO::FETCH_ASSOC);
     }
 
-    public function column($sql)
+    public function column($sql, $params = [])
     {
-        $result = $this->query($sql);
+        $result = $this->query($sql,$params);
         return $result->fetchColumn();
     }
 
