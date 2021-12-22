@@ -49,7 +49,7 @@ class Router
 
                 $action = $this->params['action'] . 'Action';
 
-                echo $pathClass . 'НАЙДЕН';
+               /* echo $pathClass . 'НАЙДЕН';*/
 
                 /*$controller = new $pathClass;*/
                 $controller = new $pathClass($this->params);

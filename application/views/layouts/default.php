@@ -9,11 +9,11 @@
 </head>
 <body>
 <header>
-    header default
+<!--    header default-->
 </header>
 <?= $content ?>
 <footer>
-    footer default
+<!--    footer default-->
 </footer>
 </body>
 </html>
